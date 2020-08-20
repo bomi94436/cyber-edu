@@ -10,6 +10,9 @@ const NavBar = () => {
       <NavLink to="/lecture" activeClassName="active">
         강의
       </NavLink>
+      <NavLink to="/login" activeClassName="active">
+        로그인
+      </NavLink>
     </div>
   );
 };
