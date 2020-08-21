@@ -2,10 +2,10 @@
   "name": "cyber-edu",
   "version": "1.0.0",
   "description": "## Contents",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server/index.js",
-    "backend": "nodemon server/index.js",
+    "start": "node server/app.js",
+    "backend": "nodemon server/app.js",
     "frontend": "npm run start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
@@ -31,11 +31,9 @@
     "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.27.0",
-    "mongoose": "^5.9.22",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.4",
-    "path": "^0.12.7",
-    "sequelize": "^6.3.4"
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",

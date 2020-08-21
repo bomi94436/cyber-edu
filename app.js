@@ -4,29 +4,28 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-require("dotenv").config();
-
-var mysql = require("mysql2");
-var db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PW,
-  database: process.env.DB_NAME,
-});
-
-db.connect();
+const config = require("./server/config/config");
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+app.set("jwt-secret", config.secret);
 
-app.use("/api/users", require("./routes/users"));
+// app.use("/api/users", require("./routes/users"));
+
+app.get("/", (req, res) => {
+  res.send("Hello JWT");
+});
+
+app.use("/api", require("./server/routes/api"));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+    res.sendFile(
+      path.resolve(__dirname, "../../client", "build", "index.html")
+    );
   });
 }
 

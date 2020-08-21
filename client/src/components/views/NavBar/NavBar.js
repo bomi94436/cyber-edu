@@ -13,6 +13,9 @@ const NavBar = () => {
       <NavLink to="/login" activeClassName="active">
         로그인
       </NavLink>
+      <NavLink to="/register" activeClassName="active">
+        회원가입
+      </NavLink>
     </div>
   );
 };

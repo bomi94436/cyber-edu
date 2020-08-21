@@ -6,6 +6,7 @@ import * as api from "../utils/api";
 // action type definition
 const SET_MODE = "main/SET_MODE";
 const SET_LOGIN = "main/SET_LOGIN";
+const SET_REGISTER = "main/SET_REGISTER";
 
 const USER_LOGIN = "main/USER_LOGIN";
 const USER_LOGIN_SUCCESS = "main/USER_LOGIN_SUCCESS";
@@ -18,6 +19,7 @@ const USER_REGISTER_FAILURE = "main/USER_REGISTER_FAILURE";
 // action generator definition
 export const setMode = createAction(SET_MODE, (data) => data);
 export const setLogin = createAction(SET_LOGIN, (data) => data);
+export const setRegister = createAction(SET_REGISTER, (data) => data);
 
 export const userLogin = (dataToSubmit) => async (dispatch) => {
   dispatch({ type: USER_LOGIN });
@@ -35,9 +37,15 @@ export const userLogin = (dataToSubmit) => async (dispatch) => {
   }
 };
 
-export const userRegister = (dataToSubmit) => async (dispatch) => {
+export const userRegister = () => async (dispatch, getState) => {
   dispatch({ type: USER_REGISTER });
   try {
+    const registerInfo = getState().register;
+    const dataToSubmit = {
+      studentId: registerInfo.studentId,
+      password: registerInfo.password,
+    };
+
     const response = await api.register(dataToSubmit);
     dispatch({
       type: USER_REGISTER_SUCCESS,
@@ -60,6 +68,15 @@ const main = handleActions(
 
       return produce(state, (draft) => {
         draft.login[name] = value;
+      });
+    },
+
+    [SET_REGISTER]: (state, action) => {
+      const name = action.payload.name;
+      const value = action.payload.value;
+
+      return produce(state, (draft) => {
+        draft.register[name] = value;
       });
     },
 
