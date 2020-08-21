@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USER_SERVER } from "../components/Config";
+import { USER_SERVER } from "../components/config";
 
 export const login = (dataToSubmit) =>
   axios.post(`${USER_SERVER}/login`, dataToSubmit);

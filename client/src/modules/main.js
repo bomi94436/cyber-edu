@@ -42,8 +42,12 @@ export const userRegister = () => async (dispatch, getState) => {
   try {
     const registerInfo = getState().register;
     const dataToSubmit = {
-      studentId: registerInfo.studentId,
+      studentId: Number(registerInfo.studentId),
       password: registerInfo.password,
+      name: registerInfo.name,
+      email: registerInfo.email,
+      phone: Number(registerInfo.phone),
+      role: Number(registerInfo.role),
     };
 
     const response = await api.register(dataToSubmit);
@@ -89,6 +93,7 @@ const main = handleActions(
     [USER_REGISTER_SUCCESS]: (state, action) =>
       produce(state, (draft) => {
         draft.loading.USER_REGISTER = false;
+        console.log(action.payload);
       }),
     [USER_REGISTER_FAILURE]: (state) =>
       produce(state, (draft) => {

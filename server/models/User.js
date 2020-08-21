@@ -27,10 +27,10 @@ const userSchema = mongoose.Schema({
     type: String,
     maxlength: 13,
   },
-  // 학생, 교수, 관리자
+  // 관리자 0, 학생 1, 교수 2
   role: {
     type: Number,
-    default: 0,
+    default: 1,
   },
   image: String,
   token: {
