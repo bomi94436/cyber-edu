@@ -1,5 +1,5 @@
 const db = require("../../../config/dbmysql2");
-const query = require("../../../queies/auth-query");
+const query = require("./auth-query");
 
 exports.register = async (studentId, password, name, email, phone, role) => {
   try {

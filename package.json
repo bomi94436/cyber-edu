@@ -5,8 +5,8 @@
   "main": "app.js",
   "proxy": "http://localhost:5000/",
   "scripts": {
-    "start": "node server/app.js",
-    "backend": "nodemon server/app.js",
+    "start": "node server/routes/app.js",
+    "backend": "nodemon server/routes/app.js",
     "frontend": "npm run start --prefix client",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""

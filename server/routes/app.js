@@ -4,7 +4,7 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
-const config = require("./server/config/config");
+const config = require("../config/config");
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   res.send("Hello JWT");
 });
 
-app.use("/api", require("./server/routes/api"));
+app.use("/api", require("./api"));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
