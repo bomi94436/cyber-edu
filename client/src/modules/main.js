@@ -6,6 +6,7 @@ import * as api from "../utils/api";
 // action type definition
 const SET_MODE = "main/SET_MODE";
 const SET_LOGIN = "main/SET_LOGIN";
+const SET_REGISTER = "main/SET_REGISTER";
 
 const USER_LOGIN = "main/USER_LOGIN";
 const USER_LOGIN_SUCCESS = "main/USER_LOGIN_SUCCESS";
@@ -18,6 +19,7 @@ const USER_REGISTER_FAILURE = "main/USER_REGISTER_FAILURE";
 // action generator definition
 export const setMode = createAction(SET_MODE, (data) => data);
 export const setLogin = createAction(SET_LOGIN, (data) => data);
+export const setRegister = createAction(SET_REGISTER, (data) => data);
 
 export const userLogin = (dataToSubmit) => async (dispatch) => {
   dispatch({ type: USER_LOGIN });
@@ -35,9 +37,19 @@ export const userLogin = (dataToSubmit) => async (dispatch) => {
   }
 };
 
-export const userRegister = (dataToSubmit) => async (dispatch) => {
+export const userRegister = () => async (dispatch, getState) => {
   dispatch({ type: USER_REGISTER });
   try {
+    const registerInfo = getState().register;
+    const dataToSubmit = {
+      studentId: Number(registerInfo.studentId),
+      password: registerInfo.password,
+      name: registerInfo.name,
+      email: registerInfo.email,
+      phone: Number(registerInfo.phone),
+      role: Number(registerInfo.role),
+    };
+
     const response = await api.register(dataToSubmit);
     dispatch({
       type: USER_REGISTER_SUCCESS,
@@ -63,6 +75,15 @@ const main = handleActions(
       });
     },
 
+    [SET_REGISTER]: (state, action) => {
+      const name = action.payload.name;
+      const value = action.payload.value;
+
+      return produce(state, (draft) => {
+        draft.register[name] = value;
+      });
+    },
+
     [USER_LOGIN]: (state) => {},
 
     [USER_REGISTER]: (state) =>
@@ -72,6 +93,7 @@ const main = handleActions(
     [USER_REGISTER_SUCCESS]: (state, action) =>
       produce(state, (draft) => {
         draft.loading.USER_REGISTER = false;
+        console.log(action.payload);
       }),
     [USER_REGISTER_FAILURE]: (state) =>
       produce(state, (draft) => {

@@ -13,6 +13,7 @@ const initState = {
     name: "",
     email: "",
     phone: "",
+    role: "1",
     //image
   },
 };
