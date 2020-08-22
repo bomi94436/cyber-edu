@@ -6,20 +6,26 @@
     }
 */
 
-const db = require("../../../config/dbmysql2").promise();
-const query = require("../../../queies/auth-query");
+const authService = require("../auth/auth-service");
 
-exports.register = (req, res) => {
+exports.register = async (req, res) => {
   const { studentId, password, name, email, phone, role } = req.body;
-  db.query(
-    query.insertUser,
-    [studentId, password, name, email, phone, role],
-    (error, results) => {
-      if (error) throw error;
-      console.log("register");
-      return res
-        .status(200)
-        .json({ message: "회원가입이 성공적으로 완료되었습니다!" });
-    }
-  );
+  try {
+    let rows = await authService.register(
+      studentId,
+      password,
+      name,
+      email,
+      phone,
+      role
+    );
+    return res
+      .status(200)
+      .json({
+        message: "회원가입이 성공적으로 완료되었습니다!",
+        payload: rows[0],
+      });
+  } catch (error) {
+    return res.status(500).json(error);
+  }
 };
