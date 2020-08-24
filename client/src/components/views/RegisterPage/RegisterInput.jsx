@@ -1,6 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import { setRegister } from "../../../modules/main";
 
 const RegisterRow = ({
   title,
@@ -24,9 +22,4 @@ const RegisterRow = ({
   );
 };
 
-export default connect(
-  (state) => ({}),
-  (dispatch) => ({
-    setRegister: (data) => dispatch(setRegister(data)),
-  })
-)(RegisterRow);
+export default RegisterRow;

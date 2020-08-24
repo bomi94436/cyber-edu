@@ -1,7 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
-import { setRegister, userRegister } from "../../../modules/main";
-import RegisterRow from "./RegisterRow";
+import RegisterInput from "./RegisterInput";
+import RegisterRadio from "./RegisterRadio";
 
 const RegisterPage = ({ setRegister, userRegister }) => {
   const handleSubmit = (e) => {
@@ -11,54 +10,53 @@ const RegisterPage = ({ setRegister, userRegister }) => {
   return (
     <div>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <span>학생</span>
-        <input
-          type="radio"
+        <RegisterRadio
+          title="학생"
           name="role"
-          value="1"
-          defaultChecked
-          onChange={(event) =>
-            setRegister({ name: "role", value: event.target.value })
-          }
+          value="student"
+          checked
+          setRegister={setRegister}
         />
-        <span>교수</span>
-        <input
-          type="radio"
+        <RegisterRadio
+          title="교수"
           name="role"
-          value="2"
-          onChange={(event) =>
-            setRegister({ name: "role", value: event.target.value })
-          }
+          value="professor"
+          setRegister={setRegister}
         />
-        <RegisterRow
+        <RegisterInput
           title="학번(직번)"
           type="text"
           placeholder="202012345 ..."
           dispatchName="studentId"
+          setRegister={setRegister}
         />
-        <RegisterRow
+        <RegisterInput
           title="비밀번호"
           type="password"
           placeholder="password ..."
           dispatchName="password"
+          setRegister={setRegister}
         />
-        <RegisterRow
+        <RegisterInput
           title="이름"
           type="text"
           placeholder="홍길동 ..."
           dispatchName="name"
+          setRegister={setRegister}
         />
-        <RegisterRow
+        <RegisterInput
           title="이메일"
           type="email"
           placeholder="test@example.com ..."
           dispatchName="email"
+          setRegister={setRegister}
         />
-        <RegisterRow
+        <RegisterInput
           title="휴대폰 번호"
           type="text"
           placeholder="01012345678 ..."
           dispatchName="phone"
+          setRegister={setRegister}
         />
         <button type="submit">회원가입</button>
       </form>
@@ -66,10 +64,4 @@ const RegisterPage = ({ setRegister, userRegister }) => {
   );
 };
 
-export default connect(
-  (state) => ({}),
-  (dispatch) => ({
-    userRegister: () => dispatch(userRegister()),
-    setRegister: (data) => dispatch(setRegister(data)),
-  })
-)(RegisterPage);
+export default RegisterPage;
