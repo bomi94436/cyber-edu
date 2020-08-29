@@ -9,8 +9,9 @@ const RegisterRow = ({
 }) => {
   return (
     <div>
-      <span>{title}</span>
+      <label htmlFor={dispatchName + "-input"}>{title}</label>
       <input
+        id={dispatchName + "-input"}
         type={type}
         placeholder={placeholder}
         onChange={(event) =>

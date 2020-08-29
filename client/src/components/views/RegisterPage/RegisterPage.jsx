@@ -2,10 +2,10 @@ import React from "react";
 import RegisterInput from "./RegisterInput";
 import RegisterRadio from "./RegisterRadio";
 
-const RegisterPage = ({ setRegister, userRegister }) => {
+const RegisterPage = ({ stateReigster, setRegister, postRegister }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    userRegister();
+    postRegister(stateReigster);
   };
   return (
     <div>

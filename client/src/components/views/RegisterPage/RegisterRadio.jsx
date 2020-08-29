@@ -3,8 +3,9 @@ import React from "react";
 const RegisterRadio = ({ title, name, value, checked, setRegister }) => {
   return (
     <span>
-      <span>{title}</span>
+      <label htmlFor={name + "-input"}>{title}</label>
       <input
+        id={name + "-input"}
         type="radio"
         name={name}
         value={value}

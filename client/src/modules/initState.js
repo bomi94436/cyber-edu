@@ -1,18 +1,18 @@
 const initState = {
   loading: {
     USER_LOGIN: false,
-    USER_REGISTER: false,
+    POST_REGISTER: false,
   },
   login: {
-    studentId: "",
+    studentId: undefined,
     password: "",
   },
   register: {
-    studentId: "",
+    studentId: undefined,
     password: "",
     name: "",
     email: "",
-    phone: "",
+    phone: undefined,
     role: "student", // admin, student, professor
     //image
   },
