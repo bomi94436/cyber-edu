@@ -22,23 +22,19 @@ describe("RegisterPageContainer", () => {
     expect(component).toMatchSnapshot();
   });
 
-  // it("dispatches SET_REGISTER action", () => {
-  //   const value = data.register[1].value;
-  //   const mockedEvent = {
-  //     target: { value: value },
-  //   };
-  //   component.find("#studentId-input").simulate("change", mockedEvent);
-  //   expect(store.getState().register.studentId).toBe(value);
-  // });
+  it("dispatches SET_REGISTER action", () => {
+    const value = data.register[1].value;
+    const mockedEvent = {
+      target: { value: value },
+    };
+    component.find("#studentId-input").simulate("change", mockedEvent);
+    expect(store.getState().register.studentId).toBe(value);
+  });
 
   it("fetches and updates using postRegister", async () => {
     const dataToSubmit = {};
     data.register.forEach((element) => {
-      if (element.name === "studentId" || element.name === "phone") {
-        dataToSubmit[`${element.name}`] = Number(element.value);
-      } else {
-        dataToSubmit[`${element.name}`] = element.value;
-      }
+      dataToSubmit[`${element.name}`] = element.value;
     });
     nock("http://localhost")
       .post("/api/auth/register", dataToSubmit)
@@ -55,6 +51,8 @@ describe("RegisterPageContainer", () => {
       });
     });
     await waitForNextAction;
-    expect(component.find("#studentId-input").props().value).toBe(undefined);
+    // 서버를 돌렸을 때 -> submit을 하면 inputs 값들이 설정한 대로 초기화됨
+    // 하지만 그게 잡히지 않는다 .... 왜지?
+    expect(component.find("#studentId-input").props().value).toBe("");
   });
 });

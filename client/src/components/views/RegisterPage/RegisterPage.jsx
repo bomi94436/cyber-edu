@@ -25,7 +25,7 @@ const RegisterPage = ({ state, setRegister, postRegister }) => {
         />
         <RegisterInput
           title="학번(직번)"
-          type="number"
+          type="text"
           placeholder="202012345 ..."
           dispatchName="studentId"
           value={state.studentId}
@@ -57,7 +57,7 @@ const RegisterPage = ({ state, setRegister, postRegister }) => {
         />
         <RegisterInput
           title="휴대폰 번호"
-          type="number"
+          type="text"
           placeholder="01012345678 ..."
           dispatchName="phone"
           value={state.phone}

@@ -15,7 +15,7 @@ const RegisterRow = ({
         id={dispatchName + "-input"}
         type={type}
         placeholder={placeholder}
-        value={value || undefined}
+        value={value || ""}
         onChange={(event) =>
           setRegister({ name: dispatchName, value: event.target.value })
         }

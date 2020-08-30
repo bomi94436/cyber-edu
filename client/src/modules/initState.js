@@ -8,11 +8,11 @@ const initState = {
     password: "",
   },
   register: {
-    studentId: undefined,
+    studentId: "",
     password: "",
     name: "",
     email: "",
-    phone: undefined,
+    phone: "",
     role: "student", // admin, student, professor
     //image
   },

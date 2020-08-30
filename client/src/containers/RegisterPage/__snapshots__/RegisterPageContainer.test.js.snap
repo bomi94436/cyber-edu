@@ -21,9 +21,9 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
           "email": "",
           "name": "",
           "password": "",
-          "phone": undefined,
+          "phone": "",
           "role": "student",
-          "studentId": undefined,
+          "studentId": "",
         }
       }
     >
@@ -80,7 +80,8 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
             placeholder="202012345 ..."
             setRegister={[Function]}
             title="학번(직번)"
-            type="number"
+            type="text"
+            value=""
           >
             <div>
               <label
@@ -92,7 +93,8 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
                 id="studentId-input"
                 onChange={[Function]}
                 placeholder="202012345 ..."
-                type="number"
+                type="text"
+                value=""
               />
               <br />
             </div>
@@ -116,6 +118,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
                 onChange={[Function]}
                 placeholder="password ..."
                 type="password"
+                value=""
               />
               <br />
             </div>
@@ -139,6 +142,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
                 onChange={[Function]}
                 placeholder="홍길동 ..."
                 type="text"
+                value=""
               />
               <br />
             </div>
@@ -162,6 +166,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
                 onChange={[Function]}
                 placeholder="test@example.com ..."
                 type="email"
+                value=""
               />
               <br />
             </div>
@@ -171,7 +176,8 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
             placeholder="01012345678 ..."
             setRegister={[Function]}
             title="휴대폰 번호"
-            type="number"
+            type="text"
+            value=""
           >
             <div>
               <label
@@ -183,7 +189,8 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
                 id="phone-input"
                 onChange={[Function]}
                 placeholder="01012345678 ..."
-                type="number"
+                type="text"
+                value=""
               />
               <br />
             </div>
