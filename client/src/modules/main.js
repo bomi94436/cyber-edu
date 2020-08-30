@@ -83,11 +83,11 @@ const main = handleActions(
       produce(state, (draft) => {
         draft.loading.POST_REGISTER = false;
         draft.register = {
-          studentId: null,
+          studentId: undefined,
           password: "",
           name: "",
           email: "",
-          phone: null,
+          phone: undefined,
           role: "student",
         };
       }),

@@ -4,7 +4,7 @@ import { setRegister, postRegister } from "../../modules/main";
 
 const RegisterPageContainer = connect(
   (state) => ({
-    stateRegister: state.register,
+    state: state.register,
   }),
   (dispatch) => ({
     setRegister: (data) => dispatch(setRegister(data)),

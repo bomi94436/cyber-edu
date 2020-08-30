@@ -2,10 +2,10 @@ import React from "react";
 import RegisterInput from "./RegisterInput";
 import RegisterRadio from "./RegisterRadio";
 
-const RegisterPage = ({ stateReigster, setRegister, postRegister }) => {
+const RegisterPage = ({ state, setRegister, postRegister }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    postRegister(stateReigster);
+    postRegister(state);
   };
   return (
     <div>
@@ -25,9 +25,10 @@ const RegisterPage = ({ stateReigster, setRegister, postRegister }) => {
         />
         <RegisterInput
           title="학번(직번)"
-          type="text"
+          type="number"
           placeholder="202012345 ..."
           dispatchName="studentId"
+          value={state.studentId}
           setRegister={setRegister}
         />
         <RegisterInput
@@ -35,6 +36,7 @@ const RegisterPage = ({ stateReigster, setRegister, postRegister }) => {
           type="password"
           placeholder="password ..."
           dispatchName="password"
+          value={state.password}
           setRegister={setRegister}
         />
         <RegisterInput
@@ -42,6 +44,7 @@ const RegisterPage = ({ stateReigster, setRegister, postRegister }) => {
           type="text"
           placeholder="홍길동 ..."
           dispatchName="name"
+          value={state.name}
           setRegister={setRegister}
         />
         <RegisterInput
@@ -49,13 +52,15 @@ const RegisterPage = ({ stateReigster, setRegister, postRegister }) => {
           type="email"
           placeholder="test@example.com ..."
           dispatchName="email"
+          value={state.email}
           setRegister={setRegister}
         />
         <RegisterInput
           title="휴대폰 번호"
-          type="text"
+          type="number"
           placeholder="01012345678 ..."
           dispatchName="phone"
+          value={state.phone}
           setRegister={setRegister}
         />
         <button type="submit">회원가입</button>

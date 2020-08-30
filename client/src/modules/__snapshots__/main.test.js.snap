@@ -35,10 +35,10 @@ Array [
       "response": Object {
         "config": Object {
           "adapter": [Function],
-          "data": "{\\"role\\":\\"professor\\",\\"studentId\\":207195076,\\"password\\":\\"bomibomi\\",\\"name\\":\\"정보미\\",\\"email\\":\\"boo0729611@gmail.com\\",\\"phone\\":1012345678}",
+          "data": "{\\"student\\":\\"professor\\",\\"studentId\\":207195076,\\"password\\":\\"bomibomi\\",\\"name\\":\\"정보미\\",\\"email\\":\\"boo0729611@gmail.com\\",\\"phone\\":1012345678}",
           "headers": Object {
             "Accept": "application/json, text/plain, */*",
-            "Content-Length": 133,
+            "Content-Length": 136,
             "Content-Type": "application/json;charset=utf-8",
             "User-Agent": "axios/0.19.2",
           },
@@ -97,7 +97,7 @@ Array [
               "auth": undefined,
               "headers": Object {
                 "Accept": "application/json, text/plain, */*",
-                "Content-Length": 133,
+                "Content-Length": 136,
                 "Content-Type": "application/json;charset=utf-8",
                 "User-Agent": "axios/0.19.2",
               },
@@ -283,7 +283,7 @@ Array [
             "_redirectCount": 0,
             "_redirects": Array [],
             "_requestBodyBuffers": Array [],
-            "_requestBodyLength": 133,
+            "_requestBodyLength": 136,
             "_writableState": WritableState {
               "afterWriteTickInfo": null,
               "autoDestroy": false,
@@ -355,7 +355,7 @@ Array [
           "flushHeaders": [Function],
           "headers": Object {
             "accept": "application/json, text/plain, */*",
-            "content-length": 133,
+            "content-length": 136,
             "content-type": "application/json;charset=utf-8",
             "host": "localhost",
             "user-agent": "axios/0.19.2",
@@ -371,7 +371,7 @@ Array [
             "auth": undefined,
             "headers": Object {
               "accept": "application/json, text/plain, */*",
-              "content-length": 133,
+              "content-length": 136,
               "content-type": "application/json;charset=utf-8",
               "user-agent": "axios/0.19.2",
             },
@@ -567,10 +567,13 @@ Array [
               "data": Array [
                 123,
                 34,
-                114,
-                111,
-                108,
+                115,
+                116,
+                117,
+                100,
                 101,
+                110,
+                116,
                 34,
                 58,
                 34,
@@ -1015,7 +1018,7 @@ Array [
             ],
             "content-length": Array [
               "content-length",
-              133,
+              136,
             ],
             "content-type": Array [
               "content-type",

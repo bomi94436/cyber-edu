@@ -22,14 +22,14 @@ describe("RegisterPageContainer", () => {
     expect(component).toMatchSnapshot();
   });
 
-  it("dispatches SET_REGISTER action", () => {
-    const value = data.register[1].value;
-    const mockedEvent = {
-      target: { value: value },
-    };
-    component.find("#studentId-input").simulate("change", mockedEvent);
-    expect(store.getState().register.studentId).toBe(value);
-  });
+  // it("dispatches SET_REGISTER action", () => {
+  //   const value = data.register[1].value;
+  //   const mockedEvent = {
+  //     target: { value: value },
+  //   };
+  //   component.find("#studentId-input").simulate("change", mockedEvent);
+  //   expect(store.getState().register.studentId).toBe(value);
+  // });
 
   it("fetches and updates using postRegister", async () => {
     const dataToSubmit = {};

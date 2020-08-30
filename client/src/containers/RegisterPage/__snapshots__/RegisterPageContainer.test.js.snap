@@ -16,7 +16,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
     <RegisterPage
       postRegister={[Function]}
       setRegister={[Function]}
-      stateRegister={
+      state={
         Object {
           "email": "",
           "name": "",
@@ -40,13 +40,13 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
           >
             <span>
               <label
-                htmlFor="role-input"
+                htmlFor="student-input"
               >
                 학생
               </label>
               <input
                 defaultChecked={true}
-                id="role-input"
+                id="student-input"
                 name="role"
                 onChange={[Function]}
                 type="radio"
@@ -62,12 +62,12 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
           >
             <span>
               <label
-                htmlFor="role-input"
+                htmlFor="professor-input"
               >
                 교수
               </label>
               <input
-                id="role-input"
+                id="professor-input"
                 name="role"
                 onChange={[Function]}
                 type="radio"
@@ -80,7 +80,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
             placeholder="202012345 ..."
             setRegister={[Function]}
             title="학번(직번)"
-            type="text"
+            type="number"
           >
             <div>
               <label
@@ -92,7 +92,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
                 id="studentId-input"
                 onChange={[Function]}
                 placeholder="202012345 ..."
-                type="text"
+                type="number"
               />
               <br />
             </div>
@@ -103,6 +103,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
             setRegister={[Function]}
             title="비밀번호"
             type="password"
+            value=""
           >
             <div>
               <label
@@ -125,6 +126,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
             setRegister={[Function]}
             title="이름"
             type="text"
+            value=""
           >
             <div>
               <label
@@ -147,6 +149,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
             setRegister={[Function]}
             title="이메일"
             type="email"
+            value=""
           >
             <div>
               <label
@@ -168,7 +171,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
             placeholder="01012345678 ..."
             setRegister={[Function]}
             title="휴대폰 번호"
-            type="text"
+            type="number"
           >
             <div>
               <label
@@ -180,7 +183,7 @@ exports[`RegisterPageContainer matches snapshot 1`] = `
                 id="phone-input"
                 onChange={[Function]}
                 placeholder="01012345678 ..."
-                type="text"
+                type="number"
               />
               <br />
             </div>

@@ -2,14 +2,20 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import RegisterPage from "./RegisterPage";
 import * as data from "../../../utils/sampleData";
+import state from "../../../modules/initState";
 
 describe("<RegisterPage />", () => {
   const mockChange = jest.fn();
   const mockSubmit = jest.fn();
 
   const setup = () => {
+    let register = state.register;
     const component = render(
-      <RegisterPage setRegister={mockChange} postRegister={mockSubmit} />
+      <RegisterPage
+        state={{ register }}
+        setRegister={mockChange}
+        postRegister={mockSubmit}
+      />
     );
     return component;
   };

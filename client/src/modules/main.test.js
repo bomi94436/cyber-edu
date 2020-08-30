@@ -90,7 +90,7 @@ describe("main", () => {
           message: "회원가입 완료",
         });
       await store.dispatch(mainActions.postRegister(dataToSubmit));
-      expect(store.getState().register.studentId).toBe(null);
+      expect(store.getState().register.studentId).toBe(undefined);
     });
   });
 });

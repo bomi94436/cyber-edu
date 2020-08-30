@@ -9,13 +9,13 @@ Object {
         <form>
           <span>
             <label
-              for="role-input"
+              for="student-input"
             >
               학생
             </label>
             <input
               checked=""
-              id="role-input"
+              id="student-input"
               name="role"
               type="radio"
               value="student"
@@ -23,12 +23,12 @@ Object {
           </span>
           <span>
             <label
-              for="role-input"
+              for="professor-input"
             >
               교수
             </label>
             <input
-              id="role-input"
+              id="professor-input"
               name="role"
               type="radio"
               value="professor"
@@ -43,7 +43,8 @@ Object {
             <input
               id="studentId-input"
               placeholder="202012345 ..."
-              type="text"
+              type="number"
+              value=""
             />
             <br />
           </div>
@@ -57,6 +58,7 @@ Object {
               id="password-input"
               placeholder="password ..."
               type="password"
+              value=""
             />
             <br />
           </div>
@@ -70,6 +72,7 @@ Object {
               id="name-input"
               placeholder="홍길동 ..."
               type="text"
+              value=""
             />
             <br />
           </div>
@@ -83,6 +86,7 @@ Object {
               id="email-input"
               placeholder="test@example.com ..."
               type="email"
+              value=""
             />
             <br />
           </div>
@@ -95,7 +99,8 @@ Object {
             <input
               id="phone-input"
               placeholder="01012345678 ..."
-              type="text"
+              type="number"
+              value=""
             />
             <br />
           </div>
@@ -113,13 +118,13 @@ Object {
       <form>
         <span>
           <label
-            for="role-input"
+            for="student-input"
           >
             학생
           </label>
           <input
             checked=""
-            id="role-input"
+            id="student-input"
             name="role"
             type="radio"
             value="student"
@@ -127,12 +132,12 @@ Object {
         </span>
         <span>
           <label
-            for="role-input"
+            for="professor-input"
           >
             교수
           </label>
           <input
-            id="role-input"
+            id="professor-input"
             name="role"
             type="radio"
             value="professor"
@@ -147,7 +152,8 @@ Object {
           <input
             id="studentId-input"
             placeholder="202012345 ..."
-            type="text"
+            type="number"
+            value=""
           />
           <br />
         </div>
@@ -161,6 +167,7 @@ Object {
             id="password-input"
             placeholder="password ..."
             type="password"
+            value=""
           />
           <br />
         </div>
@@ -174,6 +181,7 @@ Object {
             id="name-input"
             placeholder="홍길동 ..."
             type="text"
+            value=""
           />
           <br />
         </div>
@@ -187,6 +195,7 @@ Object {
             id="email-input"
             placeholder="test@example.com ..."
             type="email"
+            value=""
           />
           <br />
         </div>
@@ -199,7 +208,8 @@ Object {
           <input
             id="phone-input"
             placeholder="01012345678 ..."
-            type="text"
+            type="number"
+            value=""
           />
           <br />
         </div>
