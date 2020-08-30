@@ -1,20 +1,21 @@
 import React from "react";
-import { connect } from "react-redux";
-import { setRegister } from "../../../modules/main";
 
 const RegisterRow = ({
   title,
   type,
   placeholder,
   dispatchName,
+  value,
   setRegister,
 }) => {
   return (
     <div>
-      <span>{title}</span>
+      <label htmlFor={dispatchName + "-input"}>{title}</label>
       <input
+        id={dispatchName + "-input"}
         type={type}
         placeholder={placeholder}
+        value={value || undefined}
         onChange={(event) =>
           setRegister({ name: dispatchName, value: event.target.value })
         }
@@ -24,9 +25,4 @@ const RegisterRow = ({
   );
 };
 
-export default connect(
-  (state) => ({}),
-  (dispatch) => ({
-    setRegister: (data) => dispatch(setRegister(data)),
-  })
-)(RegisterRow);
+export default RegisterRow;

@@ -12,9 +12,9 @@ const USER_LOGIN = "main/USER_LOGIN";
 const USER_LOGIN_SUCCESS = "main/USER_LOGIN_SUCCESS";
 const USER_LOGIN_FAILURE = "main/USER_LOGIN_FAILURE";
 
-const USER_REGISTER = "main/USER_REGISTER";
-const USER_REGISTER_SUCCESS = "main/USER_REGISTER_SUCCESS";
-const USER_REGISTER_FAILURE = "main/USER_REGISTER_FAILURE";
+const POST_REGISTER = "main/POST_REGISTER";
+const POST_REGISTER_SUCCESS = "main/POST_REGISTER_SUCCESS";
+const POST_REGISTER_FAILURE = "main/POST_REGISTER_FAILURE";
 
 // action generator definition
 export const setMode = createAction(SET_MODE, (data) => data);
@@ -37,29 +37,18 @@ export const userLogin = (dataToSubmit) => async (dispatch) => {
   }
 };
 
-export const userRegister = () => async (dispatch, getState) => {
-  dispatch({ type: USER_REGISTER });
+export const postRegister = (dataToSubmit) => async (dispatch) => {
+  dispatch({ type: POST_REGISTER });
   try {
-    const registerInfo = getState().register;
-    const dataToSubmit = {
-      studentId: Number(registerInfo.studentId),
-      password: registerInfo.password,
-      name: registerInfo.name,
-      email: registerInfo.email,
-      phone: Number(registerInfo.phone),
-      role: Number(registerInfo.role),
-    };
-
     const response = await api.register(dataToSubmit);
     dispatch({
-      type: USER_REGISTER_SUCCESS,
+      type: POST_REGISTER_SUCCESS,
       payload: {
         response,
       },
     });
   } catch (e) {
-    alert("error");
-    dispatch({ type: USER_REGISTER_FAILURE, payload: e, error: true });
+    dispatch({ type: POST_REGISTER_FAILURE, payload: e, error: true });
   }
 };
 
@@ -86,18 +75,25 @@ const main = handleActions(
 
     [USER_LOGIN]: (state) => {},
 
-    [USER_REGISTER]: (state) =>
+    [POST_REGISTER]: (state) =>
       produce(state, (draft) => {
-        draft.loading.USER_REGISTER = true;
+        draft.loading.POST_REGISTER = true;
       }),
-    [USER_REGISTER_SUCCESS]: (state, action) =>
+    [POST_REGISTER_SUCCESS]: (state, action) =>
       produce(state, (draft) => {
-        draft.loading.USER_REGISTER = false;
-        console.log(action.payload);
+        draft.loading.POST_REGISTER = false;
+        draft.register = {
+          studentId: undefined,
+          password: "",
+          name: "",
+          email: "",
+          phone: undefined,
+          role: "student",
+        };
       }),
-    [USER_REGISTER_FAILURE]: (state) =>
+    [POST_REGISTER_FAILURE]: (state) =>
       produce(state, (draft) => {
-        draft.loading.USER_REGISTER = false;
+        draft.loading.POST_REGISTER = false;
       }),
   },
   initState

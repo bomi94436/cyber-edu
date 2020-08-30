@@ -1,0 +1,276 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegisterPage /> matches snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div>
+        <form>
+          <span>
+            <label
+              for="student-input"
+            >
+              학생
+            </label>
+            <input
+              checked=""
+              id="student-input"
+              name="role"
+              type="radio"
+              value="student"
+            />
+          </span>
+          <span>
+            <label
+              for="professor-input"
+            >
+              교수
+            </label>
+            <input
+              id="professor-input"
+              name="role"
+              type="radio"
+              value="professor"
+            />
+          </span>
+          <div>
+            <label
+              for="studentId-input"
+            >
+              학번(직번)
+            </label>
+            <input
+              id="studentId-input"
+              placeholder="202012345 ..."
+              type="number"
+              value=""
+            />
+            <br />
+          </div>
+          <div>
+            <label
+              for="password-input"
+            >
+              비밀번호
+            </label>
+            <input
+              id="password-input"
+              placeholder="password ..."
+              type="password"
+              value=""
+            />
+            <br />
+          </div>
+          <div>
+            <label
+              for="name-input"
+            >
+              이름
+            </label>
+            <input
+              id="name-input"
+              placeholder="홍길동 ..."
+              type="text"
+              value=""
+            />
+            <br />
+          </div>
+          <div>
+            <label
+              for="email-input"
+            >
+              이메일
+            </label>
+            <input
+              id="email-input"
+              placeholder="test@example.com ..."
+              type="email"
+              value=""
+            />
+            <br />
+          </div>
+          <div>
+            <label
+              for="phone-input"
+            >
+              휴대폰 번호
+            </label>
+            <input
+              id="phone-input"
+              placeholder="01012345678 ..."
+              type="number"
+              value=""
+            />
+            <br />
+          </div>
+          <button
+            type="submit"
+          >
+            회원가입
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
+      <form>
+        <span>
+          <label
+            for="student-input"
+          >
+            학생
+          </label>
+          <input
+            checked=""
+            id="student-input"
+            name="role"
+            type="radio"
+            value="student"
+          />
+        </span>
+        <span>
+          <label
+            for="professor-input"
+          >
+            교수
+          </label>
+          <input
+            id="professor-input"
+            name="role"
+            type="radio"
+            value="professor"
+          />
+        </span>
+        <div>
+          <label
+            for="studentId-input"
+          >
+            학번(직번)
+          </label>
+          <input
+            id="studentId-input"
+            placeholder="202012345 ..."
+            type="number"
+            value=""
+          />
+          <br />
+        </div>
+        <div>
+          <label
+            for="password-input"
+          >
+            비밀번호
+          </label>
+          <input
+            id="password-input"
+            placeholder="password ..."
+            type="password"
+            value=""
+          />
+          <br />
+        </div>
+        <div>
+          <label
+            for="name-input"
+          >
+            이름
+          </label>
+          <input
+            id="name-input"
+            placeholder="홍길동 ..."
+            type="text"
+            value=""
+          />
+          <br />
+        </div>
+        <div>
+          <label
+            for="email-input"
+          >
+            이메일
+          </label>
+          <input
+            id="email-input"
+            placeholder="test@example.com ..."
+            type="email"
+            value=""
+          />
+          <br />
+        </div>
+        <div>
+          <label
+            for="phone-input"
+          >
+            휴대폰 번호
+          </label>
+          <input
+            id="phone-input"
+            placeholder="01012345678 ..."
+            type="number"
+            value=""
+          />
+          <br />
+        </div>
+        <button
+          type="submit"
+        >
+          회원가입
+        </button>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
