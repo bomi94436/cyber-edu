@@ -2,6 +2,7 @@ import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
 import initState from "./initState";
 import * as api from "../utils/api";
+import { validate } from "../utils/checkValidation";
 
 // action type definition
 const SET_MODE = "main/SET_MODE";
@@ -37,18 +38,21 @@ export const userLogin = (dataToSubmit) => async (dispatch) => {
   }
 };
 
-export const postRegister = (dataToSubmit) => async (dispatch) => {
+export const postRegister = (state) => async (dispatch) => {
   dispatch({ type: POST_REGISTER });
   try {
-    const response = await api.register(dataToSubmit);
+    const response = await api.register(state);
     dispatch({
       type: POST_REGISTER_SUCCESS,
       payload: {
         response,
       },
     });
+    return response.data.message;
   } catch (e) {
+    console.log(e);
     dispatch({ type: POST_REGISTER_FAILURE, payload: e, error: true });
+    return "회원가입에 실패햐였습니다.";
   }
 };
 
@@ -69,7 +73,8 @@ const main = handleActions(
       const value = action.payload.value;
 
       return produce(state, (draft) => {
-        draft.register[name] = value;
+        draft.register.value[name] = value;
+        draft.register.valid[name] = validate(name, value);
       });
     },
 
@@ -82,14 +87,9 @@ const main = handleActions(
     [POST_REGISTER_SUCCESS]: (state, action) =>
       produce(state, (draft) => {
         draft.loading.POST_REGISTER = false;
-        draft.register = {
-          studentId: "",
-          password: "",
-          name: "",
-          email: "",
-          phone: "",
-          role: "student",
-        };
+        // 초기화
+        draft.register.valid = initState.register.valid;
+        draft.register.value = initState.register.value;
       }),
     [POST_REGISTER_FAILURE]: (state) =>
       produce(state, (draft) => {

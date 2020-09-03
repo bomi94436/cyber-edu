@@ -19,7 +19,7 @@ describe("main", () => {
 
   describe("actions", () => {
     const actions = [
-      mainActions.setRegister({ name: "studentId", value: 207195076 }),
+      mainActions.setRegister({ name: "studentId", value: "201795076" }),
     ];
     it("should create actions", () => {
       expect(actions).toMatchSnapshot();
@@ -90,7 +90,7 @@ describe("main", () => {
           message: "회원가입 완료",
         });
       await store.dispatch(mainActions.postRegister(dataToSubmit));
-      expect(store.getState().register.studentId).toBe(undefined);
+      expect(store.getState().register.studentId).toBe("");
     });
   });
 });

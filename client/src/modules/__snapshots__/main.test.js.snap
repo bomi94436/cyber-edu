@@ -5,7 +5,7 @@ Array [
   Object {
     "payload": Object {
       "name": "studentId",
-      "value": 207195076,
+      "value": "201795076",
     },
     "type": "main/SET_REGISTER",
   },
@@ -35,7 +35,7 @@ Array [
       "response": Object {
         "config": Object {
           "adapter": [Function],
-          "data": "{\\"student\\":\\"professor\\",\\"studentId\\":207195076,\\"password\\":\\"bomibomi\\",\\"name\\":\\"정보미\\",\\"email\\":\\"boo0729611@gmail.com\\",\\"phone\\":1012345678}",
+          "data": "{\\"student\\":\\"professor\\",\\"studentId\\":201795076,\\"password\\":\\"bomibomi\\",\\"name\\":\\"정보미\\",\\"email\\":\\"boo0729611@gmail.com\\",\\"phone\\":1012345678}",
           "headers": Object {
             "Accept": "application/json, text/plain, */*",
             "Content-Length": 136,
@@ -602,8 +602,8 @@ Array [
                 58,
                 50,
                 48,
-                55,
                 49,
+                55,
                 57,
                 53,
                 48,

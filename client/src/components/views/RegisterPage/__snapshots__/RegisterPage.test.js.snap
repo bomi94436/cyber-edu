@@ -43,8 +43,7 @@ Object {
             <input
               id="studentId-input"
               placeholder="202012345 ..."
-              type="number"
-              value=""
+              type="text"
             />
             <br />
           </div>
@@ -58,7 +57,6 @@ Object {
               id="password-input"
               placeholder="password ..."
               type="password"
-              value=""
             />
             <br />
           </div>
@@ -72,7 +70,6 @@ Object {
               id="name-input"
               placeholder="홍길동 ..."
               type="text"
-              value=""
             />
             <br />
           </div>
@@ -86,7 +83,6 @@ Object {
               id="email-input"
               placeholder="test@example.com ..."
               type="email"
-              value=""
             />
             <br />
           </div>
@@ -99,8 +95,7 @@ Object {
             <input
               id="phone-input"
               placeholder="01012345678 ..."
-              type="number"
-              value=""
+              type="text"
             />
             <br />
           </div>
@@ -152,8 +147,7 @@ Object {
           <input
             id="studentId-input"
             placeholder="202012345 ..."
-            type="number"
-            value=""
+            type="text"
           />
           <br />
         </div>
@@ -167,7 +161,6 @@ Object {
             id="password-input"
             placeholder="password ..."
             type="password"
-            value=""
           />
           <br />
         </div>
@@ -181,7 +174,6 @@ Object {
             id="name-input"
             placeholder="홍길동 ..."
             type="text"
-            value=""
           />
           <br />
         </div>
@@ -195,7 +187,6 @@ Object {
             id="email-input"
             placeholder="test@example.com ..."
             type="email"
-            value=""
           />
           <br />
         </div>
@@ -208,8 +199,7 @@ Object {
           <input
             id="phone-input"
             placeholder="01012345678 ..."
-            type="number"
-            value=""
+            type="text"
           />
           <br />
         </div>

@@ -9,7 +9,7 @@ import RegisterPage from "../containers/RegisterPage/RegisterPageContainer";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
         <NavBar />
         <Switch>

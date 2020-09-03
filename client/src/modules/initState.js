@@ -4,17 +4,28 @@ const initState = {
     POST_REGISTER: false,
   },
   login: {
-    studentId: undefined,
+    studentId: "",
     password: "",
   },
   register: {
-    studentId: "",
-    password: "",
-    name: "",
-    email: "",
-    phone: "",
-    role: "student", // admin, student, professor
-    //image
+    value: {
+      role: "", // admin, student, professor
+      studentId: "",
+      password: "",
+      name: "",
+      email: "",
+      phone: "",
+      //image
+    },
+    valid: {
+      // validation check
+      role: null,
+      studentId: null,
+      password: null,
+      name: null,
+      email: null,
+      phone: null,
+    },
   },
 };
 
