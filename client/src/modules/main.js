@@ -74,7 +74,16 @@ const main = handleActions(
 
       return produce(state, (draft) => {
         draft.register.value[name] = value;
-        draft.register.valid[name] = validate(name, value);
+        if (name === "re_password") {
+          console.log("re");
+          draft.register.valid[name] = validate(
+            name,
+            value,
+            draft.register.value.password
+          );
+        } else {
+          draft.register.valid[name] = validate(name, value);
+        }
       });
     },
 

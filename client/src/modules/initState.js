@@ -12,6 +12,7 @@ const initState = {
       role: "", // admin, student, professor
       studentId: "",
       password: "",
+      re_password: "",
       name: "",
       email: "",
       phone: "",
@@ -22,6 +23,7 @@ const initState = {
       role: null,
       studentId: null,
       password: null,
+      re_password: null,
       name: null,
       email: null,
       phone: null,

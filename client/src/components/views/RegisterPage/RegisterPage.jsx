@@ -43,7 +43,14 @@ const RegisterPage = ({ history, state, setRegister, postRegister }) => {
           dispatchName="password"
           setRegister={setRegister}
         />
-        {/* 비밀번호 확인 */}
+        <RegisterInput
+          title="비밀번호 확인"
+          type="password"
+          valid={state.valid.re_password}
+          placeholder="**********"
+          dispatchName="re_password"
+          setRegister={setRegister}
+        />
         <RegisterInput
           title="이름"
           type="text"

@@ -1,9 +1,11 @@
+import * as data from "./sampleData";
+
 const studentIdRegExp = /^\d+$/; // 숫자만 입력
 const passwordRegExp = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // 영어, 숫자 조합해서 8자리 이상 입력
 const emailRegExp = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/;
 const phoneNumberRegExp = /^\d{3}-\d{3,4}-\d{4}$/;
 
-export const validate = (target, value) => {
+export const validate = (target, value, password) => {
   switch (target) {
     case "role":
       if (value) return true;
@@ -20,6 +22,10 @@ export const validate = (target, value) => {
         value.match(passwordRegExp)
       )
         return true;
+      else return false;
+
+    case "re_password":
+      if (value === password) return true;
       else return false;
 
     case "name":
