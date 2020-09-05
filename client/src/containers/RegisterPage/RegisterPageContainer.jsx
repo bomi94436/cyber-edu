@@ -1,6 +1,6 @@
 import RegisterPage from "../../components/views/RegisterPage/RegisterPage";
 import { connect } from "react-redux";
-import { setRegister, postRegister } from "../../modules/main";
+import { setRegister, postRegister } from "../../modules/user";
 
 const RegisterPageContainer = connect(
   (state) => ({

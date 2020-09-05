@@ -12,6 +12,7 @@ const RegisterPage = ({ history, state, setRegister, postRegister }) => {
     });
     history.push("/");
   };
+
   return (
     <div className="register">
       <form onSubmit={(e) => handleSubmit(e)} className="form-frame">

@@ -28,7 +28,7 @@ describe("RegisterPageContainer", () => {
       target: { value: value },
     };
     component.find("#studentId-input").simulate("change", mockedEvent);
-    expect(store.getState().register.studentId).toBe(value);
+    expect(store.getState().register.value.studentId).toBe(value);
   });
 
   /*

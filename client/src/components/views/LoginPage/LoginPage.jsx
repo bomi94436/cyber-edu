@@ -1,15 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setLogin, userLogin } from "../../../modules/main";
+import { setLogin, postLogin } from "../../../modules/user";
 
-const LoginPage = ({ studentId, password, setLogin }) => {
+const LoginPage = ({ studentId, password, setLogin, postLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let dataToSubmit = {
       studentId: studentId,
       password: password,
     };
-    userLogin(dataToSubmit);
+    postLogin(dataToSubmit);
   };
   return (
     <div>
@@ -45,6 +45,6 @@ export default connect(
   }),
   (dispatch) => ({
     setLogin: (data) => dispatch(setLogin(data)),
-    userLogin: (data) => dispatch(userLogin(data)),
+    postLogin: (data) => dispatch(postLogin(data)),
   })
 )(LoginPage);
