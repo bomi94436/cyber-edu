@@ -1,41 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`main actions should create actions 1`] = `
+exports[`user actions should create actions 1`] = `
 Array [
   Object {
     "payload": Object {
       "name": "studentId",
-      "value": 207195076,
+      "value": "201795076",
     },
-    "type": "main/SET_REGISTER",
+    "type": "user/SET_REGISTER",
   },
 ]
 `;
 
-exports[`main async action fails 1`] = `
+exports[`user async action fails 1`] = `
 Array [
   Object {
-    "type": "main/POST_REGISTER",
+    "type": "user/POST_REGISTER",
   },
   Object {
     "error": true,
     "payload": [Error: Request failed with status code 400],
-    "type": "main/POST_REGISTER_FAILURE",
+    "type": "user/POST_REGISTER_FAILURE",
   },
 ]
 `;
 
-exports[`main async action postRegister dispatches proper action 1`] = `
+exports[`user async action postRegister dispatches proper action 1`] = `
 Array [
   Object {
-    "type": "main/POST_REGISTER",
+    "type": "user/POST_REGISTER",
   },
   Object {
     "payload": Object {
       "response": Object {
         "config": Object {
           "adapter": [Function],
-          "data": "{\\"student\\":\\"professor\\",\\"studentId\\":207195076,\\"password\\":\\"bomibomi\\",\\"name\\":\\"정보미\\",\\"email\\":\\"boo0729611@gmail.com\\",\\"phone\\":1012345678}",
+          "data": "{\\"student\\":\\"professor\\",\\"studentId\\":201795076,\\"password\\":\\"bomibomi\\",\\"name\\":\\"정보미\\",\\"email\\":\\"boo0729611@gmail.com\\",\\"phone\\":1012345678}",
           "headers": Object {
             "Accept": "application/json, text/plain, */*",
             "Content-Length": 136,
@@ -602,8 +602,8 @@ Array [
                 58,
                 50,
                 48,
-                55,
                 49,
+                55,
                 57,
                 53,
                 48,
@@ -1038,7 +1038,7 @@ Array [
         "statusText": null,
       },
     },
-    "type": "main/POST_REGISTER_SUCCESS",
+    "type": "user/POST_REGISTER_SUCCESS",
   },
 ]
 `;

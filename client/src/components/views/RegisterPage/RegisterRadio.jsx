@@ -1,6 +1,6 @@
 import React from "react";
 
-const RegisterRadio = ({ title, name, value, checked, setRegister }) => {
+const RegisterRadio = ({ title, name, value, setRegister }) => {
   return (
     <span>
       <label htmlFor={value + "-input"}>{title}</label>
@@ -9,7 +9,6 @@ const RegisterRadio = ({ title, name, value, checked, setRegister }) => {
         type="radio"
         name={name}
         value={value}
-        defaultChecked={checked}
         onChange={(event) =>
           setRegister({ name: name, value: event.target.value })
         }

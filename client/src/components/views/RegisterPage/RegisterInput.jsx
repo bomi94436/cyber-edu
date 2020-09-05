@@ -1,21 +1,22 @@
 import React from "react";
+import { inputClassNameByValid } from "../../../utils/checkValidation";
 
 const RegisterRow = ({
   title,
   type,
+  valid,
   placeholder,
   dispatchName,
-  value,
   setRegister,
 }) => {
   return (
-    <div>
+    <div className="form-group">
       <label htmlFor={dispatchName + "-input"}>{title}</label>
       <input
         id={dispatchName + "-input"}
         type={type}
+        className={`form-control ${inputClassNameByValid(valid)}`}
         placeholder={placeholder}
-        value={value || undefined}
         onChange={(event) =>
           setRegister({ name: dispatchName, value: event.target.value })
         }

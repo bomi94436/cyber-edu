@@ -2,12 +2,12 @@ import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import nock from "nock";
 
-import main, * as mainActions from "./main";
+import user, * as userActions from "./user";
 import initState from "./initState";
 import * as data from "../utils/sampleData";
 import store from "./store";
 
-describe("main", () => {
+describe("user", () => {
   const dataToSubmit = {};
   data.register.forEach((element) => {
     if (element.name === "studentId" || element.name === "phone") {
@@ -19,7 +19,7 @@ describe("main", () => {
 
   describe("actions", () => {
     const actions = [
-      mainActions.setRegister({ name: "studentId", value: 207195076 }),
+      userActions.setRegister({ name: "studentId", value: "201795076" }),
     ];
     it("should create actions", () => {
       expect(actions).toMatchSnapshot();
@@ -37,14 +37,14 @@ describe("main", () => {
           message: "회원가입 완료",
         });
 
-      await store.dispatch(mainActions.postRegister(dataToSubmit));
+      await store.dispatch(userActions.postRegister(dataToSubmit));
       expect(store.getActions()[0]).toHaveProperty(
         "type",
-        "main/POST_REGISTER"
+        "user/POST_REGISTER"
       );
       expect(store.getActions()[1]).toHaveProperty(
         "type",
-        "main/POST_REGISTER_SUCCESS"
+        "user/POST_REGISTER_SUCCESS"
       );
       expect(store.getActions()).toMatchSnapshot();
     });
@@ -53,14 +53,14 @@ describe("main", () => {
       store.clearActions();
       nock("http://localhost").post("/api/auth/register", {}).once().reply(400);
       try {
-        await store.dispatch(mainActions.postRegister({}));
+        await store.dispatch(userActions.postRegister({}));
       } catch (e) {}
       expect(store.getActions()).toMatchSnapshot();
     });
   });
 
   describe("reducer", () => {
-    let state = main(undefined, {});
+    let state = user(undefined, {});
 
     it("should return the initialState", () => {
       expect(state).toEqual(initState);
@@ -71,14 +71,14 @@ describe("main", () => {
         const name = element.name;
         const value = element.value;
 
-        state = main(
+        state = user(
           state,
-          mainActions.setRegister({
+          userActions.setRegister({
             name: name,
             value: value,
           })
         );
-        expect(state.register).toHaveProperty(name, value);
+        expect(state.register.value).toHaveProperty(name, value);
       });
     });
 
@@ -89,8 +89,8 @@ describe("main", () => {
         .reply(200, {
           message: "회원가입 완료",
         });
-      await store.dispatch(mainActions.postRegister(dataToSubmit));
-      expect(store.getState().register.studentId).toBe(undefined);
+      await store.dispatch(userActions.postRegister(dataToSubmit));
+      expect(store.getState().register.value.studentId).toBe("");
     });
   });
 });
