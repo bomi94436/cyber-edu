@@ -1,6 +1,6 @@
 import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
-import initState from "./initState";
+import initState from "../initState";
 
 // action type definition
 const SET_MODE = "main/SET_MODE";

@@ -1,8 +1,8 @@
 import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
-import initState from "./initState";
-import * as api from "../utils/api";
-import { validate } from "../utils/checkValidation";
+import initState from "../initState";
+import * as api from "../../utils/api";
+import { validate } from "../../utils/checkValidation";
 
 // action type definition
 const SET_LOGIN = "user/SET_LOGIN";
@@ -31,15 +31,14 @@ export const postLogin = (dataToSubmit) => async (dispatch) => {
       },
     });
   } catch (e) {
-    alert("error");
     dispatch({ type: POST_LOGIN_FAILURE, payload: e, error: true });
   }
 };
 
-export const postRegister = (state) => async (dispatch) => {
+export const postRegister = (dataToSubmit) => async (dispatch) => {
   dispatch({ type: POST_REGISTER });
   try {
-    const response = await api.register(state);
+    const response = await api.register(dataToSubmit);
     dispatch({
       type: POST_REGISTER_SUCCESS,
       payload: {
@@ -49,7 +48,7 @@ export const postRegister = (state) => async (dispatch) => {
     return response.data.message;
   } catch (e) {
     dispatch({ type: POST_REGISTER_FAILURE, payload: e, error: true });
-    return "회원가입에 실패햐였습니다.";
+    // return "회원가입에 실패햐였습니다.";
   }
 };
 

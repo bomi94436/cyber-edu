@@ -2,13 +2,26 @@ import { createStore, applyMiddleware } from "redux";
 import reduceReducers from "reduce-reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 import ReduxThunk from "redux-thunk";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
 import initState from "./initState";
-import main from "./main";
-import user from "./user";
+import main from "./reducers/main";
+import user from "./reducers/user";
 
-const reducer = reduceReducers(initState, main, user);
+const persistConfig = {
+  key: "root",
+  storage,
+};
 
-export default createStore(
-  reducer,
-  composeWithDevTools(applyMiddleware(ReduxThunk))
-);
+const rootReducer = reduceReducers(initState, main, user);
+const reducer = persistReducer(persistConfig, rootReducer);
+
+export default function configureStore() {
+  const store = createStore(
+    reducer,
+    composeWithDevTools(applyMiddleware(ReduxThunk))
+  );
+  const persistor = persistStore(store);
+  return { store, persistor };
+}

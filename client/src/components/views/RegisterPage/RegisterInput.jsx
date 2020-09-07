@@ -5,6 +5,7 @@ const RegisterRow = ({
   title,
   type,
   valid,
+  value,
   placeholder,
   dispatchName,
   setRegister,
@@ -17,6 +18,7 @@ const RegisterRow = ({
         type={type}
         className={`form-control ${inputClassNameByValid(valid)}`}
         placeholder={placeholder}
+        value={value}
         onChange={(event) =>
           setRegister({ name: dispatchName, value: event.target.value })
         }

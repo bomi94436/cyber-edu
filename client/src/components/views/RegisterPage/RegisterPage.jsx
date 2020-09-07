@@ -32,6 +32,7 @@ const RegisterPage = ({ history, state, setRegister, postRegister }) => {
           title="학번(직번)"
           type="text"
           valid={state.valid.studentId}
+          value={state.value.studentId}
           placeholder="202012345"
           dispatchName="studentId"
           setRegister={setRegister}
@@ -40,6 +41,7 @@ const RegisterPage = ({ history, state, setRegister, postRegister }) => {
           title="비밀번호"
           type="password"
           valid={state.valid.password}
+          value={state.value.password}
           placeholder="**********"
           dispatchName="password"
           setRegister={setRegister}
@@ -48,6 +50,7 @@ const RegisterPage = ({ history, state, setRegister, postRegister }) => {
           title="비밀번호 확인"
           type="password"
           valid={state.valid.re_password}
+          value={state.value.re_password}
           placeholder="**********"
           dispatchName="re_password"
           setRegister={setRegister}
@@ -56,6 +59,7 @@ const RegisterPage = ({ history, state, setRegister, postRegister }) => {
           title="이름"
           type="text"
           valid={state.valid.name}
+          value={state.value.name}
           placeholder="홍길동"
           dispatchName="name"
           setRegister={setRegister}
@@ -64,6 +68,7 @@ const RegisterPage = ({ history, state, setRegister, postRegister }) => {
           title="이메일"
           type="email"
           valid={state.valid.email}
+          value={state.value.email}
           placeholder="test@example.com"
           dispatchName="email"
           setRegister={setRegister}
@@ -72,6 +77,7 @@ const RegisterPage = ({ history, state, setRegister, postRegister }) => {
           title="휴대폰 번호"
           type="text"
           valid={state.valid.phone}
+          value={state.value.phone}
           placeholder="010-1234-5678"
           dispatchName="phone"
           setRegister={setRegister}

@@ -5,7 +5,8 @@ import nock from "nock";
 import user, * as userActions from "./user";
 import initState from "./initState";
 import * as data from "../utils/sampleData";
-import store from "./store";
+import configureStore from "./store";
+const { store, persistor } = configureStore();
 
 describe("user", () => {
   const dataToSubmit = {};
