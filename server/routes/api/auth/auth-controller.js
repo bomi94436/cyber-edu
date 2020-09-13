@@ -22,7 +22,6 @@ exports.register = async (req, res) => {
     return res.status(200).json({
       isSuccess: true,
       message: "회원가입이 성공적으로 완료되었습니다!",
-      payload: rows[0],
     });
   } catch (error) {
     return res.status(200).json({
