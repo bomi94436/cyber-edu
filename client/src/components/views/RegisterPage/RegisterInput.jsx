@@ -1,5 +1,5 @@
 import React from "react";
-import { inputClassNameByValid } from "../../../utils/checkValidation";
+import { inputClassNameByValid } from "../../../utils/validations";
 
 const RegisterRow = ({
   title,

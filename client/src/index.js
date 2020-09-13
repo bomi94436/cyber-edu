@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./components/App.jsx";
 import * as serviceWorker from "./serviceWorker";
 import configureStore from "./modules/store";
-const { store, persistor } = configureStore();
+const { store } = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>

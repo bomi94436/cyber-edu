@@ -2,15 +2,15 @@ import React from "react";
 import RegisterInput from "./RegisterInput";
 import RegisterRadio from "./RegisterRadio";
 import "./RegisterPage.css";
-import { isEveryFieldValid } from "../../../utils/checkValidation";
+import { isEveryFieldValid } from "../../../utils/validations";
 
 const RegisterPage = ({ history, state, setRegister, postRegister }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     postRegister(state.value).then((res) => {
-      alert(res);
+      alert(res.message);
+      if (res.isSuccess) history.push("/");
     });
-    history.push("/");
   };
 
   return (

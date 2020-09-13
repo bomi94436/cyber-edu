@@ -2,7 +2,7 @@ import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
 import initState from "../initState";
 import * as api from "../../utils/api";
-import { validate } from "../../utils/checkValidation";
+import { validate } from "../../utils/validations";
 
 // action type definition
 const SET_LOGIN = "user/SET_LOGIN";
@@ -39,13 +39,18 @@ export const postRegister = (dataToSubmit) => async (dispatch) => {
   dispatch({ type: POST_REGISTER });
   try {
     const response = await api.register(dataToSubmit);
-    dispatch({
-      type: POST_REGISTER_SUCCESS,
-      payload: {
-        response,
-      },
-    });
-    return response.data.message;
+    if (response.data.isSuccess) {
+      dispatch({
+        type: POST_REGISTER_SUCCESS,
+        payload: {
+          response,
+        },
+      });
+    } else {
+      dispatch({ type: POST_REGISTER_FAILURE, payload: response });
+    }
+
+    return response.data;
   } catch (e) {
     dispatch({ type: POST_REGISTER_FAILURE, payload: e, error: true });
     // return "회원가입에 실패햐였습니다.";
@@ -71,7 +76,6 @@ const user = handleActions(
       return produce(state, (draft) => {
         draft.register.value[name] = value;
         if (name === "re_password") {
-          console.log("re");
           draft.register.valid[name] = validate(
             name,
             value,
