@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 import RegisterPageContainer from "./RegisterPageContainer";
 import configureStore from "../../modules/store";
 const { store, persistor } = configureStore();
-import * as data from "../../utils/sampleData";
+import * as data from "../../../../utils/sampleData";
 
 describe("RegisterPageContainer", () => {
   let component = null;

@@ -8,7 +8,7 @@
     "start": "node server/routes/app.js",
     "backend": "nodemon server/routes/app.js",
     "frontend": "npm run start --prefix client",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cd server && mocha $(find ./ -name '*.js') --recursive -w./server",
     "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
   },
   "repository": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/bomi94436/cyber-edu#readme",
   "dependencies": {
+    "assert": "^2.0.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "concurrently": "^5.2.0",
@@ -32,10 +33,12 @@
     "express-validator": "^6.6.1",
     "fs": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
+    "mocha": "^8.1.3",
     "moment": "^2.27.0",
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.4",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",

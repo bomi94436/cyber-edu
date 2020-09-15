@@ -7,7 +7,15 @@ exports.register = async (studentId, password, name, email, phone, role) => {
   try {
     bcrypt.hash(password, saltRounds, (err, hash) => {
       if (err) throw Error(err);
-      db.query(query.insertUser, [studentId, hash, name, email, phone, role]);
+      let rows = db.query(query.insertUser, [
+        studentId,
+        hash,
+        name,
+        email,
+        phone,
+        role,
+      ]);
+      return rows;
     });
   } catch (error) {
     console.log(error);

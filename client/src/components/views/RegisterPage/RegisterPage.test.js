@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import RegisterPage from "./RegisterPage";
-import * as data from "../../../utils/sampleData";
+import * as data from "../../../../../utils/sampleData";
 import state from "../../../modules/initState";
 
 describe("<RegisterPage />", () => {
