@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setLogin, postLogin } from "../../../modules/user";
+import { setLogin, postLogin } from "../../../modules/reducers/user";
 
 const LoginPage = ({ studentId, password, setLogin, postLogin }) => {
   const handleSubmit = (e) => {

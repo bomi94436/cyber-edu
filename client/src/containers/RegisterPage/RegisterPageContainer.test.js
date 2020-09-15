@@ -4,8 +4,9 @@ import { mount } from "enzyme";
 import { Provider } from "react-redux";
 
 import RegisterPageContainer from "./RegisterPageContainer";
-import store from "../../modules/store";
-import * as data from "../../utils/sampleData";
+import configureStore from "../../modules/store";
+const { store, persistor } = configureStore();
+import * as data from "../../../../utils/sampleData";
 
 describe("RegisterPageContainer", () => {
   let component = null;

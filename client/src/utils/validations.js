@@ -1,5 +1,3 @@
-import * as data from "./sampleData";
-
 const studentIdRegExp = /^\d+$/; // 숫자만 입력
 const passwordRegExp = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/; // 영어, 숫자 조합해서 8자리 이상 입력
 const emailRegExp = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/;

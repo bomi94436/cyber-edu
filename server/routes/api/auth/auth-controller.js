@@ -19,13 +19,15 @@ exports.register = async (req, res) => {
       phone,
       role
     );
-    return res
-      .status(200)
-      .json({
-        message: "회원가입이 성공적으로 완료되었습니다!",
-        payload: rows[0],
-      });
+    return res.status(200).json({
+      isSuccess: true,
+      message: "회원가입이 성공적으로 완료되었습니다!",
+    });
   } catch (error) {
-    return res.status(500).json(error);
+    return res.status(200).json({
+      isSuccess: false,
+      message: "회원가입에 실패하였습니다.",
+      error,
+    });
   }
 };
