@@ -13,7 +13,7 @@
     "enzyme-to-json": "^3.5.0",
     "history": "^5.0.0",
     "http-proxy-middleware": "^1.0.4",
-    "immer": "^7.0.7",
+    "immer": "^8.0.1",
     "nock": "^13.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
